@@ -17,3 +17,5 @@ def main():
     cosine_similarity(vec1,vec2)
 if __name__=="__main__":
     main()
+
+ 
