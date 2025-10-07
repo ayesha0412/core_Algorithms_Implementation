@@ -61,15 +61,17 @@ def compute_model(x,w,b):
     for i in range(m):
         f_wb[i]=w*x[i]+b
     return f_wb
+def compute_cost(x,y,w,b):
+    # number of training egs
+    m=x.shape[0]
+    cost_sum=0
+    for i in range(m):
+        f_wb=x*w+b
+        cost=(f_wb-y[i]**2)
+        cost_sum=cost_sum+cost
+        total_cost=cost_sum/(2*m)
+    return total_cost
 
-temp_f_wb= compute_model(x_train,w,b)
-plt.plot(x_train,temp_f_wb, c='b', label='Our prediction')
-plt.scatter(x_train,y_train, marker='x', c='r', label='Actual data')
-plt.title("housing Prices")
-plt.ylabel("Price in 1000s of dollars")
-plt.xlabel("Size in 1000 square feet")
-plt.legend()
-plt.show()
 
 
 
